@@ -3,11 +3,11 @@
 # Первый и последний элементы не рассматривать.
 
 import random
+import numpy as np
 
-mas = []
-for i in range(10):
-    mas.append(random.randrange(0,10))
+mas = np.array([random.randrange(100) for _ in range(10)])
 
+print('Исходный массив: ')
 print(mas)
 
 bigger = 0
@@ -16,4 +16,17 @@ for i in range(1, len(mas) - 1):
     if mas[i] > mas[i-1] and mas[i] > mas[i+1]:
         bigger += 1
 
+print('Кол-во элементов массива, которые больше своих соседей: ')
 print(bigger)
+
+# task-2
+# Для массива из 10 чисел найти номер первого элемента, большего 25.
+
+for i in range(len(mas)):
+    if mas[i] > 25:
+        #print(i, mas[i])
+        bigger25 = i
+        break
+
+print('Порядковый номер первого элемента массива, большего 25: ')
+print(i+1)
