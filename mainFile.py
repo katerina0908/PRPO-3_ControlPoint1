@@ -5,7 +5,7 @@
 import random
 import numpy as np
 
-mas = np.array([random.randrange(100) for _ in range(10)])
+mas = np.array([random.randrange(-50, 50) for _ in range(10)])
 
 print('Исходный массив: ')
 print(mas)
@@ -73,3 +73,25 @@ fig.set_figwidth(12)    #  ширина Figure
 fig.set_figheight(6)    #  высота Figure
 
 plt.show()
+# 4. Определить, превосходит ли первый элемент массива из десяти чисел
+# среднее значение элементов этого массива.
+
+if mas[0] > np.mean(mas):
+    answer = 'превосходит'
+else: answer = 'не превосходит'
+
+print('Первый элемент массива', mas[0], answer, 'среднее значение элементов массива', np.mean(mas))
+
+# 5. Дан массив из 10 чисел. Определить­ сколько раз меняется знак у его элементов.
+
+cntOfChange = 0
+
+for i in range(1, len(mas)):
+    if (mas[i] > 0 and mas[i-1] < 0) or (mas[i] < 0 and mas[i-1] > 0):
+        cntOfChange += 1
+
+if cntOfChange in (0, 1, 5, 6, 7, 8, 9, 10):
+    s = 'раз'
+else: s = 'раза'
+
+print('У элементов массива знак меняется', cntOfChange, s)
