@@ -5,7 +5,7 @@
 import random
 import numpy as np
 
-mas = np.array([random.randrange(-50, 50) for _ in range(10)])
+mas = np.array([random.randrange(-10, 10) for _ in range(10)])
 
 print('Исходный массив: ')
 print(mas)
@@ -58,4 +58,10 @@ print('У элементов массива знак меняется', cntOfCha
 
 cnt = np.sum(np.where(mas>=0, 1, 0))
 print('Кол-во неотрицательных эл-тов массива: ')
+print(cnt)
+
+# 13. Дан массив из 10 чисел. Подсчитать­ количество­ не нулевых элементов массива.
+
+cnt = np.sum(np.where(mas != 0, 1, 0))
+print('Кол-во ненулевых эл-тов массива: ')
 print(cnt)
