@@ -5,7 +5,16 @@
 import random
 import numpy as np
 
-mas = np.array([random.randrange(100) for _ in range(10)])
+mas = np.array([random.randrange(20) for _ in range(10)])
+
+masUnique = np.unique(mas)
+cntElemMas = len(masUnique)
+while cntElemMas < 10:
+    masUniqueShort = np.unique(masUnique)
+    newElem = np.array([random.randrange(20) for _ in range(10 - cntElemMas)])
+    masUnique = np.append(
+    masUniqueShort, newElem)
+    cntElemMas = len(np.unique(masUnique))
 
 print('Исходный массив: ')
 print(mas)
@@ -77,3 +86,16 @@ mas9 = mas[9]
 masStrange = np.where(np.where(mas < mas0, mas, 0) > mas9, 1, 0)
 print('В массиве', np.sum(masStrange), 'элементов, которые меньше первого элемента', mas0,
       "и больше последнего элемента", mas9)
+
+# 12. Дан массив из 10 разных чисел. Найти элемент, меньше всего отличающий­ся от второго.
+print('Исходный массив: ')
+print(mas)
+print("Отсортированный массив из уникальных значений: ")
+masUniqueSort = np.unique(masUnique)
+print(masUniqueSort)
+
+if masUniqueSort[1] - masUniqueSort[0] < masUniqueSort[2] - masUniqueSort[1]:
+    el = masUniqueSort[0]
+else: el = masUniqueSort[2]
+print('Элемент, меньше всего отличающийся от второго: ')
+print(el)
