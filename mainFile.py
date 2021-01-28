@@ -56,3 +56,20 @@ masLessThan21 = np.where(mas < 21, mas, 0)
 
 print('Сумма элементов массива, меньших, чем 21: ')
 print(np.sum(masLessThan21))
+
+# 16. Отобразить массив виде гистораммы
+import matplotlib.pyplot as plt
+
+x = np.arange(1, 11)
+y = mas
+
+fig, ax = plt.subplots()
+
+ax.bar(x, y)
+
+ax.set_facecolor('seashell')
+fig.set_facecolor('floralwhite')
+fig.set_figwidth(12)    #  ширина Figure
+fig.set_figheight(6)    #  высота Figure
+
+plt.show()
