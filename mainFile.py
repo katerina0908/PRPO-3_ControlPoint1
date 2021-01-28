@@ -73,10 +73,10 @@ print('Новый массив, где все элементы, кратные 5
 print(np.where(mas%5 == 0, mas+1, mas))
 
 # 9. Для массива из 10 целых чисел подчитать сумму элементов,­ значения которых не кратны 3.
-masMultiples3 = np.where(mas%3 != 0, mas, 0)
+masNotMultiples3 = np.where(mas%3 != 0, mas, 0)
 
 print('Сумма элементов масива, значения которых не кратны 3: ')
-print(np.sum(masMultiples3))
+print(np.sum(masNotMultiples3))
 
 # 10. Для массива из десяти чисел подсчитать, сколько чисел меньше первого элемента массива
 # и одновременно больше последнего элемента.
@@ -99,3 +99,9 @@ if masUniqueSort[1] - masUniqueSort[0] < masUniqueSort[2] - masUniqueSort[1]:
 else: el = masUniqueSort[2]
 print('Элемент, меньше всего отличающийся от второго: ')
 print(el)
+
+# 14. В массиве из 10 целых чисел подсчитать­ количество­ элементов,­ кратных 3.
+masMultiples3 = np.where(mas%3 == 0, 1, 0)
+
+print('Кол-во элементов масива, значения которых кратны 3: ')
+print(np.sum(masMultiples3))
