@@ -49,3 +49,10 @@ for i in range(1, len(mas)):
         biggerThan4 += 1
 
 print(biggerThan4, 'элементов массива больше, чем 4й элемент', mas[3])
+
+# 7. Найти сумму элементов массива из 10 чисел, меньших, чем 21.
+
+masLessThan21 = np.where(mas < 21, mas, 0)
+
+print('Сумма элементов массива, меньших, чем 21: ')
+print(np.sum(masLessThan21))
